@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Main Container */
+
+.iphone {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iphone-container {
+  position: relative;
+  background-image: url("wallpaper.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: 225px;
+  height: 450px;
+  border: 8px solid black;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.iphone-container::before {
+  content: "";
+  position: absolute;
+  width: 221px;
+  height: 447px;
+  border: 2px solid rgba(128, 128, 128, 0.638);
+  border-radius: 30px;
+}
+
+.notch {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 0px 0px 10px 10px;
+  background-color: black;
+  z-index: 1;
+}
+
+.microfone {
+  position: absolute;
+  border-radius: 30px;
+  width: 30px;
+  height: 4.5px;
+  background-color: rgba(128, 128, 128, 0.219);
+  z-index: 1;
+  top: 5px;
+}
+
+.cam {
+  position: absolute;
+  border-radius: 50px;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(0, 0, 255, 0.255);
+  z-index: 1;
+  top: 3px;
+  right: 75px;
+}
+
+.operator {
+  position: absolute;
+  color: white;
+  font-size: 0.5rem;
+  top: 5px;
+  left: 16px;
+  z-index: 1;
+}
+
+.wifi {
+  position: absolute;
+  color: white;
+  font-size: 0.45rem;
+  top: 5px;
+  right: 28px;
+  z-index: 1;
+}
+
+.battery {
+  position: absolute;
+  color: white;
+  font-size: 0.65rem;
+  top: 3.3px;
+  right: 11px;
+  z-index: 1;
+}
+
+.signal {
+  position: absolute;
+  color: white;
+  font-size: 0.45rem;
+  top: 5px;
+  right: 42px;
+  z-index: 1;
+}
+
+.lock {
+  position: absolute;
+  color: white;
+  font-size: 0.6rem;
+  top: 30px;
+  z-index: 1;
+}
+
+.date {
+  position: absolute;
+  top: 44px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 200;
+  letter-spacing: 0.1px;
+}
+
+.clock {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-size: 3.7rem;
+  top: 47px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+/* Main Container End */
+
+/* Notifications */
+
+.notification {
+  position: relative;
+  width: 200px;
+  height: 54px;
+  top: -55px;
+  border-radius: 10px;
+  background-color: lightgray;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.notification:hover {
+  opacity: 0.95;
+  background-color: rgba(211, 211, 211, 0.772);
+}
+
+.settings {
+  position: absolute;
+  top: 3px;
+  left: 3.5px;
+  width: 20px;
+}
+
+.not-set {
+  position: absolute;
+  color: gray;
+  font-size: 0.6rem;
+  margin-top: 1px;
+  top: 5px;
+  left: 25px;
+}
+
+.not-now {
+  position: absolute;
+  color: gray;
+  font-size: 0.6rem;
+  margin-top: 1px;
+  top: 5px;
+  right: 10px;
+}
+
+.not-usb {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.874);
+  font-size: 0.65rem;
+  margin-top: 1px;
+  top: 22px;
+  left: 3.5px;
+  font-weight: 450;
+}
+
+.not-more {
+  position: absolute;
+  color: gray;
+  font-size: 0.55rem;
+  margin-top: 1px;
+  top: 37px;
+  left: 3.5px;
+  font-weight: 300;
+}
+
+/* Notifications End */
+
+/* Navigation Bar */
+
+.bar {
+  position: absolute;
+  width: 80px;
+  height: 2.55px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  bottom: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.bar:hover {
+  transform: scale(110%);
+}
+
+/* Navigation Bar End */
+
+/* Lockscreen */
+
+.lock-container {
+  display: none;
+  position: absolute;
+  top: 150px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  transition: 1s linear;
+}
+
+.display {
+  display: grid;
+  transition: 1s;
+}
+
+.blur {
+  display: block;
+  position: absolute;
+  backdrop-filter: blur(7px);
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transition: 0.5s linear;
+}
+
+.btn {
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.2);
+  text-align: center;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.786);
+  transition: 0.5s;
+  cursor: pointer;
+  font-weight: 200;
+}
+
+button:nth-child(10) {
+  grid-column-end: 3;
+}
+
+.btn:hover {
+  background-color: rgba(128, 128, 128, 0.396);
+}
+
+.cancel {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.786);
+  bottom: -30px;
+  right: 6px;
+  font-size: 0.7rem;
+  transition: 0.5s;
+  cursor: pointer;
+  letter-spacing: -0.8px;
+}
+
+.cancel:hover {
+  color: rgba(211, 211, 211, 0.7);
+}
+
+.enter {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.786);
+  font-size: 0.75rem;
+  top: -85px;
+  right: 41px;
+}
+
+.first-lock {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(128, 128, 128, 0.396);
+  width: 10px;
+  height: 10px;
+  top: -60px;
+  right: 50px;
+  transition: 0.3s;
+}
+
+.second-lock {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(128, 128, 128, 0.396);
+  width: 10px;
+  height: 10px;
+  top: -60px;
+  right: 70px;
+  transition: 0.3s;
+}
+
+.third-lock {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(128, 128, 128, 0.396);
+  width: 10px;
+  height: 10px;
+  top: -60px;
+  right: 90px;
+  transition: 0.3s;
+}
+
+.fourth-lock {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(128, 128, 128, 0.396);
+  width: 10px;
+  height: 10px;
+  top: -60px;
+  right: 110px;
+  transition: 0.3s;
+}
+
+.active {
+  background-color: grey;
+}
+
+.transition-in {
+  animation: shake 0.2s 2;
+}
+
+@keyframes shake {
+  25% {
+    translate: 6px 0;
+  }
+  50% {
+    translate: -6px 0;
+  }
+  75% {
+    translate: 6px 0;
+  }
+}
+
+/* Lockscreen End */
